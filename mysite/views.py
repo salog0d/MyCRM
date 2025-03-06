@@ -7,10 +7,10 @@ from .models import Person
 #List of all the people that exist in the database
 def dashboard(request):
     people = Person.objects.all()
-    return render(request , "dashboard.html" , {"perople" : people})
+    return render(request , "../templates/dashboard.html" , {"people" : people})
 
 #Products for each person
 def person_products(request, person_id):
     person = get_object_or_404(Person, id = person_id)
-    products = person.products.all()
-    return render(request, "person_products.html", {"person": person , "products": products})
+    products = person.products
+    return render(request, "../templates/person_products.html", {"person": person , "products": products})

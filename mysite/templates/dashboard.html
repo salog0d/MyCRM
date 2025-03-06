@@ -12,11 +12,12 @@
         <li>
             {{ person.name}} {{ person.last_name}}-{{ person.position}} 
             <br>
-            <a>href="{% url "person_products" person.id %}"
-                <button>View Products</button>
+            <a href="{% url 'person_products' person.id %}">View Products</a>
+
+                
             </a>
         </li>
         {% endfor %}
 
 </body>
-</html>W
+</html>

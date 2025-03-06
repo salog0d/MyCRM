@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person-Products</title>
+</head>
+<body>
+    <h1>Products for {{ person.name }} {{ person.last_name }}</h1>
+
+{% if products %}
+    <ul>
+        {% for product in products %}
+            <li>{{ product.product_type }} - {{ product.serial_code }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No products assigned to this person yet.</p>
+{% endif %}
+
+</body>
+</html>
