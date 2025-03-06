@@ -1,7 +1,3 @@
-Here's an updated README for your **MyCRM** app, developed using Django:
-
----
-
 # MyCRM
 
 MyCRM is a web application built with Django that provides administrative control over people and products in an inventory (almacén). It allows you to manage, track, and administer users and products effectively in real-time.
@@ -26,7 +22,7 @@ MyCRM is a web application built with Django that provides administrative contro
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/MyCRM.git
+   git clone git@github.com:salog0d/MyCRM.git
    cd MyCRM
    ```
 
