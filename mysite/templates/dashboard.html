@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+   
+        {% for person in people %}
+        <li>
+            {{ person.name}} {{ person.last_name}}-{{ person.position}} 
+            <br>
+            <a>href="{% url "person_products" person.id %}"
+                <button>View Products</button>
+            </a>
+        </li>
+        {% endfor %}
+
+</body>
+</html>W
