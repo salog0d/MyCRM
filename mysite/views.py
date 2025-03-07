@@ -121,9 +121,20 @@ def update_product(request, product_id):
 #Delete opperations
 
 def delete_person(request, person_id):
-    person = get_object_or_404(Person, id= person_id)
-    return
+    person = get_object_or_404(Person, id=person_id)
+    
+    products = person.product_set.all()  # Fetch queryset
+    products.delete()  # Now this works
+    
+    # Delete person
+    person.delete()
+    
+    messages.success(request, "Persona eliminada de manera satisfactoria")
+    return redirect('dashboard')  # Replace with the actual view name
 
-def delete_product(request, person_id):
-    person = get_object_or_404(Person, id= person_id)
-    return
+def delete_product(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    product.delete()  # Correct usage
+
+    messages.success(request, "Producto eliminado de manera exitosa")
+    return redirect("dashboard")

@@ -9,12 +9,12 @@
     <h1>Products for {{ person.name }} {{ person.last_name }}</h1>
 
 {% if products %}
-    <ul>
-        {% for product in products %}
-            <li>{{ product.product_type }} - {{ product.serial_code }}</li>
-            <a href="{% url 'product_details' person.id product.id %}">View Product Details</a> 
-        {% endfor %}
-    </ul>
+{% for product in products %}
+<li>{{ product.product_type }} - {{ product.serial_code }}</li>
+<a href="{% url 'product_details' person.id product.id %}">View Product Details</a>
+<a href="{% url 'delete_product' product.id %}">Delete Product</a>  {# Move this inside the loop #}
+{% endfor %}
+
 {% else %}
     <p>No products assigned to this person yet.</p>
 {% endif %}
