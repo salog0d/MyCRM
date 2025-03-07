@@ -14,10 +14,13 @@
             <br>
             <a href="{% url 'person_products' person.id %}">View Products</a>
 
-                
+            <a href="{% url 'person_details' person.id %}">View Person Details</a>
+      
             </a>
         </li>
         {% endfor %}
+
+        <a href="{% url 'create_person' %}" class="button">Add New Person</a>
 
 </body>
 </html>

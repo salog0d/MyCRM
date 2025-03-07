@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+</head>
+<body>
+    <h1>Product Details for {{ person.name }} {{ person.last_name }}</h1>
+
+    <!-- Display product details -->
+    <p><strong>Product Type:</strong> {{ product.product_type }}</p>
+    <p><strong>Serial Code:</strong> {{ product.serial_code }}</p>
+    <p><strong>Name:</strong> {{ product.name }}</p>
+    <p><strong>Quantity:</strong> {{ product.quantity }}</p>
+
+
+    <a href="{% url 'dashboard' %}">Home</a>
+</body>
+</html>

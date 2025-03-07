@@ -24,7 +24,7 @@ class Person(models.Model):
         return f"{self.name}-{self.last_name}-{self.age}-{self.email}-{self.position}"
     
     def products(self):
-        return list(self.product_set.all())  # Returns all products owned by this person
+        return list(self.product_set.all())  
 
 
 class  Product(models.Model):
@@ -38,8 +38,9 @@ class  Product(models.Model):
     product_type = models.CharField(max_length=20 , choices=PRODUCT_TYPE)
     serial_code = models.CharField(max_length=20, unique=True)
     owner = models.ForeignKey(Person, on_delete=models.CASCADE)
+    name = models.CharField(max_length= 30, unique= True, default="DEFAULT_VALUE")
+    quantity = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(100)])
 
     def __str__(self):
-        return f"{self.product_type}-{self.serial_code}"
+        return f"{self.product_type}-{self.serial_code}-{self.name}-{self.owner}-{self.quantity}"
     
-
