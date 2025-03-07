@@ -26,6 +26,7 @@
         <input type="text" id="position" name="position" value="{{ personal_info.4 }}" readonly><br><br>
         
         <a href="{% url 'dashboard' %}">Home</a>
+        <a href="{% url 'update_person' person.id %}">Edit</a>
     </form>
 </body>
 </html>
