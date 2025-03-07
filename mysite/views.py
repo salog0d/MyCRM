@@ -96,13 +96,34 @@ def update_person(request, person_id):
         "action": "Actualizar",
         "person": person,  # Pasar la persona al contexto para usarla en la plantilla
     })
-def update_product(request, person_id, product_id):
+
+def update_product(request, product_id):
+    product = get_object_or_404(Product, id= product_id)
+
+    if request.method == "POST":
+
+        form = ProductForm(request.POST, instance = product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Producto actualizado correctamente")
+            return redirect("dashboard")
+        else:
+            messages.error(request, "Ingrese valores validos en el formulario")
+    else:
+        form = ProductForm(instance=product)
+    return render(request, "product/product_form.html",{
+        "form": form,
+        "action": "Actualizar",
+        "product": product
+    })
     return
 
 #Delete opperations
 
 def delete_person(request, person_id):
+    person = get_object_or_404(Person, id= person_id)
     return
 
 def delete_product(request, person_id):
+    person = get_object_or_404(Person, id= person_id)
     return
