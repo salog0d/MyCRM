@@ -66,10 +66,5 @@ MyCRM is a web application built with Django that provides administrative contro
 4. Push to the branch (`git push origin feature-name`).
 5. Create a new Pull Request.
 
-## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
-
-You can adjust the repository URL and other project-specific details as needed.
